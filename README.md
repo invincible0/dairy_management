@@ -11,6 +11,7 @@ Stores list of all transactions ordered by date in descending order. Transaction
 List of all Customers ordered by Name. List can be filtered by Customer Name.
 
 <img src="screenshots/add_customer.png">
+<img src="screenshots/customer.png">
 
 Customer Registration Page.
 
