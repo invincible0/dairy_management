@@ -20,7 +20,7 @@ New Transaction Page.
 
 # SQL SCHEMA:
 
-Customer Schema:\
+Customer Schema:
 
 CREATE TABLE Customers(\
 ID int NOT NULL AUTO_INCREMENT,\
@@ -32,7 +32,7 @@ DUE int DEFAULT 0,\
 PRIMARY KEY (ID)\
 );
 
-Transaction Schema:\
+Transaction Schema:
 
 CREATE TABLE Transactions(\
 ID int NOT NULL AUTO_INCREMENT,\
