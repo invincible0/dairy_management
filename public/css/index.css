@@ -1,0 +1,35 @@
+body {  
+        background-color: #f3f3f3;
+        margin: 0;
+        padding: 0;
+        letter-spacing: 1px;
+        word-spacing: 1px
+}
+.round-border {
+        border-radius: 2rem ;
+}
+.add {
+        padding: 0px;
+}
+.header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem;
+}
+.navbar {
+        margin-bottom: 1rem;
+}
+.form {
+        padding: 2rem;
+        padding-top: 0.5rem;
+        border-radius: 1.2rem;
+        
+}         
+.margin-1 {
+        margin-left: 1rem;
+        margin-right: 1rem;
+}
+input[type=number] {
+        -moz-appearance: textfield;
+}      

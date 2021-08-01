@@ -1,0 +1,62 @@
+<%- include('./partials/header') %>
+<div class="">
+    <div class="col s12 m6">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Customer Name : <%=customer.NAME%></span>
+          <p>Mobile No. : <%=customer.MOBILE%></p>
+          <p>Address : <%=customer.ADDRESS%></p>
+          <p>Amount Due : <%=customer.DUE%></p>
+          <p>Additional Note : <%=customer.NOTE%></p>
+        </div>
+        <div class="card-action">
+          <a href="/customers/edit/<%=customer.ID%>">Edit</a>
+          <a href="/transactions/add/<%=customer.ID%>">Add Transaction</a>
+          <a href="/customers/delete/<%=customer.ID%>">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="header-container">
+        <form action="/customers/<%=customer.ID%>" method="POST" class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input 
+                        type='date'  
+                        name='Date'/>
+                </div>
+                <button type='submit' class="btn-small margin-1 round-border">Search
+                    <i class="material-icons right" style="font-size: 1rem; margin-left: 0.5rem;">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+    <table class="highlight white card">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Qty.</th>
+                <th>Amount</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+          <% if (transactions.length > 0) { %>
+            <% transactions.forEach((transaction, index) => { %>
+                <tr>
+                    <td><%= transaction.DATEE.getDate()+'-'+transaction.DATEE.getMonth()+'-'+transaction.DATEE.getFullYear()%></td>
+                    <td><%= transaction.TYPE%></td>
+                    <td><%= transaction.QTY%></td>
+                    <td><%= transaction.AMOUNT%></td>
+                    <td><%= transaction.NOTE%></td>
+                </tr>
+            <%})%>
+        <% }%>
+        </tbody>
+    </table>
+    
+  </div>
+<%- include('./partials/footer') %>

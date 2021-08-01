@@ -1,0 +1,63 @@
+<%- include('./partials/header') %>
+        <div class="container center">
+            <div class="white form card row">
+                <form action="/transactions/add/<%=customer.ID%>" method="post" class="col s12">
+                    <h5>Enter Transaction details</h5>
+                    
+                    <div class="row">
+                        <input type="hidden" name="CID" value="<%=customer.ID%>">
+                        <input type="hidden" name="NAME" value="<%=customer.NAME%>">
+                        <div class="input-field col s12">
+                            <input 
+                                type='date' 
+                                placeholder="Date" 
+                                name='Date' 
+                                required/>
+                        </div>
+                        
+                        <div class="column">
+                            <label>
+                                <input name="Type" type="radio" value="Payment" checked />
+                                <span>Payment</span>
+                              </label>
+                              <label>
+                                <input name="Type" type="radio" value="Milk Cow"/>
+                                <span>Milk Cow</span>
+                              </label>
+                              <label>
+                                <input name="Type" type="radio" value="Milk Buffalo"/>
+                                <span>Milk Buffalo</span>
+                              </label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input 
+                                type='number' 
+                                placeholder="Qty" 
+                                name='Qty' />
+                        </div>
+                        <div class="input-field col s12">
+                            <input 
+                                type='number' 
+                                placeholder="Amount" 
+                                name='Amount' 
+                                required/>
+                        </div>
+                        <div  class="input-field col s12">
+                            <input 
+                                type='text' 
+                                placeholder="Additional Note" 
+                                name='Note' 
+                                maxlength="50"
+                                minlength="3"/>
+                        </div>
+                    </div>
+                    <button type='submit' class="btn-small margin-1 round-border">Add
+                        <i class="material-icons right" style="font-size: 1rem; margin-left: 0.5rem;">send</i>
+                    </button>
+                    <a class="btn-small red margin-1 round-border" href="/" >Cancel
+                        <i class="material-icons right" style="font-size: 1rem; margin-left: 0.5rem;">clear</i>
+                    </a>
+                </form>
+            </div>
+        </div>
+<%- include('./partials/footer') %>

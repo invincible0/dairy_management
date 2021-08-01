@@ -1,0 +1,59 @@
+<%- include('./partials/header') %>
+        <div class="container center">
+            <div class="white form card row">
+                <form action="/customers/edit/<%=customer.ID%>" method="post" class="col s12">
+                    <h5>Enter Customer details</h5>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input 
+                                type='text' 
+                                placeholder="Name" 
+                                name='Name' 
+                                value="<%=customer.NAME%>"
+                                class="validate" 
+                                maxlength="30"
+                                minlength="3"
+                                required/>
+                        </div>
+
+                        <div  class="input-field col s12">
+                            <input 
+                                type='text' 
+                                placeholder="Address" 
+                                name='Address' 
+                                value="<%=customer.ADDRESS%>"
+                                maxlength="50"
+                                minlength="3"
+                                required/>
+                        </div>
+
+                        <div class="input-field col s12">
+                            <input 
+                                type='number' 
+                                placeholder="Mobile Number" 
+                                name='Mobile' 
+                                value="<%=customer.MOBILE%>"
+                                min="1000000000"
+                                max="9999999999"
+                                required/>
+                        </div>
+                        <div  class="input-field col s12">
+                            <input 
+                                type='text' 
+                                placeholder="Additional Note" 
+                                name='Note' 
+                                value="<%=customer.NOTE%>"
+                                maxlength="50"
+                                minlength="3"/>
+                        </div>
+                    </div>
+                    <button type='submit' class="btn-small margin-1 round-border">SAVE
+                        <i class="material-icons right" style="font-size: 1rem; margin-left: 0.5rem;">send</i>
+                    </button>
+                    <a class="btn-small red margin-1 round-border" href="/" >Cancel
+                        <i class="material-icons right" style="font-size: 1rem; margin-left: 0.5rem;">clear</i>
+                    </a>
+                </form>
+            </div>
+        </div>
+<%- include('./partials/footer') %>

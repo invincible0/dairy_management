@@ -1,0 +1,52 @@
+<%- include('./partials/header') %>
+
+<div class="container">
+    <div>
+        <div class="row">
+            <form action="/filter" method="POST" class="col s12">
+                <div class="row">
+                    <h6>Search Transaction by Date</h3>
+                    <div class="input-field col s12">
+                        <input 
+                            type='date'  
+                            name='Date'
+                            required/>
+                    </div>
+                    <button type='submit' class="btn-small margin-1 round-border">Search
+                        <i class="material-icons right" style="font-size: 1rem; margin-left: 0.5rem;">send</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="continer">
+    <table class="highlight white card">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Qty.</th>
+                <th>Amount</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (transactions.length > 0) { %>
+                <% transactions.forEach((transaction, index) => { %>
+                    <tr>
+                        <td><a href="/customers/<%=transaction.CID%>"><%= transaction.NAME%></a></td>
+                        <td><%= (transaction.DATEE).getDate()+'-'+(transaction.DATEE).getMonth()+'-'+(transaction.DATEE).getFullYear()%></td>
+                        <td><%= transaction.TYPE%></td>
+                        <td><%= transaction.QTY%></td>
+                        <td><%= transaction.AMOUNT%></td>
+                        <td><%= transaction.NOTE%></td>
+                    </tr>
+                <%})%>
+            <% }%>
+        </tbody>
+    </table>
+</div>
+
+<%- include('./partials/footer') %>
