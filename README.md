@@ -35,13 +35,23 @@ PRIMARY KEY (ID)
 Transaction Schema:
 
 CREATE TABLE Transactions(
+
 ID int NOT NULL AUTO_INCREMENT,
+
 CID int NOT NULL,
+
 NAME varchar(30) NOT NULL,
+
 DATEE DATE NOT NULL,
+
 TYPE varchar(20) NOT NULL,
+
 QTY int,
+
 AMOUNT int NOT NULL,
+
 NOTE varchar(30),
+
 PRIMARY KEY (ID)
+
 );
