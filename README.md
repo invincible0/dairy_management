@@ -20,20 +20,21 @@ New Transaction Page.
 
 # SQL SCHEMA:
 
-Customer Schema:
+Customer Schema:\
 
-CREATE TABLE Customers(
-ID int NOT NULL AUTO_INCREMENT,
-NAME varchar(30) NOT NULL,
-ADDRESS Varchar(50) NOT NULL,
-MOBILE bigint NOT NULL,
-NOTE varchar(50),
-DUE int DEFAULT 0,
-PRIMARY KEY (ID)
+CREATE TABLE Customers(\
+ID int NOT NULL AUTO_INCREMENT,\
+NAME varchar(30) NOT NULL,\
+ADDRESS Varchar(50) NOT NULL,\
+MOBILE bigint NOT NULL,\
+NOTE varchar(50),\
+DUE int DEFAULT 0,\
+PRIMARY KEY (ID)\
 );
 
-Transaction Schema:
-CREATE TABLE Transactions(
+Transaction Schema:\
+
+CREATE TABLE Transactions(\
 ID int NOT NULL AUTO_INCREMENT,\
 CID int NOT NULL,\
 NAME varchar(30) NOT NULL,\
